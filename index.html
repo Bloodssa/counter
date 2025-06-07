@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #141414;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    height: 30vh;
+    width: 30%;
+    border: 1px solid rgb(242, 196, 46);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 2px 2px 10px rgb(242, 196, 46);
+}
+#counterLabel {
+    color: #fff;
+    font-size: 100px;
+    position: relative;
+    bottom: 20px;
+}
+button {
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 1em;
+    border: none;
+    background-color: rgb(242, 196, 46);
+    transition: background-color 0.75s;
+    color: #ffffff;
+    font-weight: 600;
+}
+button:hover {
+    background-color: rgb(172, 131, 6);
+}
+button:active {
+    scale: 1.02;
+}
+    </style>
+</head>
+<body> 
+
+
+    <div class="container">
+        <label id="counterLabel">0</label>
+        <div class="container-btn">
+            <button type="button" id="increaseBtn">Increase</button>
+            <button type="button" id="resetBtn">Reset</button>
+            <button type="button" id="decreaseBtn">Decrease</button>
+        </div>
+    </div>
+
+
+
+    <script>
+const increase = document.getElementById('increaseBtn');
+const decrease = document.getElementById('decreaseBtn');
+const reset = document.getElementById('resetBtn');
+const countLabel = document.getElementById('counterLabel');
+
+count = 0;
+
+
+increase.onclick = function () {
+    count++;
+    countLabel.textContent = count;
+};
+
+decrease.onclick = function () {
+    count--;
+    countLabel.textContent = count;
+};
+
+reset.onclick = function () {
+    count = 0;
+    countLabel.textContent = count;
+};
+    </script>
+</body>
+</html>
